@@ -27,6 +27,16 @@ body{
 
 /* Mobile-first responsive design */
 @media (max-width: 768px) {
+  body {
+    display: block;
+    align-items: stretch;
+    justify-content: stretch;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    overflow-x: hidden;
+  }
+  
   .app {
     width: 100vw;
     min-height: 100vh;
@@ -34,17 +44,9 @@ body{
     height: auto;
     border-radius: 0;
     margin: 0;
-    overflow-y: auto;
+    overflow-y: visible;
     overflow-x: hidden;
-  }
-  
-  body {
-    align-items: stretch;
-    justify-content: stretch;
-    min-height: 100vh;
-    min-height: 100dvh;
-    height: auto;
-    overflow-x: hidden;
+    position: relative;
   }
 }
 
@@ -89,6 +91,17 @@ header{
     min-height: auto;
     height: auto;
     overflow-y: visible;
+    display: none;
+    padding-bottom: 40px; /* Extra padding at bottom for mobile */
+  }
+  
+  .screen.active {
+    display: block;
+  }
+  
+  /* Ensure the last section has enough bottom padding */
+  .screen:last-child {
+    padding-bottom: 60px;
   }
 }
 
@@ -608,6 +621,19 @@ html {
     min-height: 100vh;
     min-height: 100dvh; /* Dynamic viewport height for mobile */
   }
+  
+  /* Force the app to be scrollable on mobile */
+  .app {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Ensure screens take full width and height */
+  .screen.active {
+    width: 100%;
+    min-height: auto;
+    height: auto;
+  }
 }
 
 /* Better focus states for accessibility */
@@ -628,20 +654,40 @@ input:focus {
   color: white;
 }
 
-/* Better spacing for mobile navigation */
+/* Additional mobile fixes for viewport issues */
 @media (max-width: 768px) {
-  .screen {
-    display: none;
-    padding-bottom: 40px; /* Extra padding at bottom for mobile */
+  /* Force full height and proper scrolling */
+  html, body {
+    height: 100%;
+    overflow-x: hidden;
   }
   
+  /* Ensure content is fully scrollable */
+  .app {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Make sure screens can expand to full content height */
   .screen.active {
-    display: block;
+    min-height: auto;
+    height: auto;
+    padding-bottom: 80px; /* Extra space at bottom */
+    width: 100%;
   }
   
-  /* Ensure the last section has enough bottom padding */
-  .screen:last-child {
-    padding-bottom: 60px;
+  /* Specific fix for the last screen */
+  #carRental.screen.active {
+    padding-bottom: 100px;
+  }
+  
+  /* Ensure body allows scrolling */
+  body {
+    overflow-y: auto;
   }
 }
 

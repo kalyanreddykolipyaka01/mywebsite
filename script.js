@@ -12,7 +12,18 @@ function show(id){
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   const tgt = document.getElementById(id);
   if (tgt) tgt.classList.add('active');
-  window.scrollTo({top:0, behavior:'smooth'});
+  
+  // Mobile-specific scroll handling
+  if (window.innerWidth <= 768) {
+    // On mobile, scroll to top of the app container
+    const app = document.getElementById('app');
+    if (app) {
+      app.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  } else {
+    // On desktop, scroll window
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
 }
 
 // Handle both click and touch events for better mobile experience
