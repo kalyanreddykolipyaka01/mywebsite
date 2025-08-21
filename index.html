@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#ef4444" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>California Trip • Sept 15–20</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <!-- ========== LANDING (Checklist Gate) ========== -->
+    <section class="screen active" id="landing">
+      <header>
+        <span class="tag">CALIFORNIA TRIP PLANNER</span>
+        <div class="hero">
+          <div class="wordmark">
+            <span class="shadow" aria-hidden="true">CALIFORNIA</span>
+            CALIFORNIA
+          </div>
+          <div class="dates">SEP 15 MON – SEP 20 SAT</div>
+
+          <div class="gate">
+            <h3 class="gate-title">
+              “IF YOU ARE READY TO THROW RUNNING COMMENTS  DURING TRIP.  RIGHTNOW YOU NEED TO TAKE THE INITIATIVE TO MAKE THE PLAN FOR THE TRIP.”
+            </h3>
+
+            <ul class="checks">
+              <li>
+                <label>
+                  <input type="checkbox" class="gate-check">
+                  <span>No one is forcing me — I am joining this trip because I am truly interested.</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" class="gate-check">
+                  <span>I understand that the pictures online may not look exactly the same in real life, and I am okay with that.</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" class="gate-check">
+                  <span>I understand that the timings may not be exact and could vary a little — and I am okay with that.</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" class="gate-check">
+                  <span>I accept that because of weather conditions, the plans may change.</span>
+                </label>
+              </li>
+            </ul>
+
+            <div class="note">
+              <strong>Note from the Organizer:</strong>
+              <p>
+                We are a group of 17 people. Based on my knowledge, research from the internet, advice from others,
+                and careful consideration of budget and time management, I have invested a lot of effort into preparing this trip plan.
+              </p>
+            </div>
+
+            <div class="cta">
+              <button id="landingContinue" class="btn primary" data-nav="participants" disabled>Continue</button>
+            </div>
+          </div>
+
+          <div class="roadline"></div>
+        </div>
+      </header>
+    </section>
+
+    <!-- ========== PARTICIPANTS ========== -->
+    <section class="screen" id="participants">
+      <h2>Participants</h2>
+      <p class="muted">Tap <strong>Interested</strong> or <strong>Not Interested</strong> for each person.</p>
+      <div class="grid people" id="peopleGrid"></div>
+      <div class="bar">
+        <div id="statusPill" class="pill">No responses yet</div>
+        <button class="btn primary" id="submitVotes">Submit</button>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT (PRUDHVI ONLY) ========== -->
+    <section class="screen" id="contacts">
+      <h2>Trip Contact</h2>
+      <div class="grid single">
+        <div class="card contact-card">
+          <div class="avatar">
+            <img src="prudhvi.png" alt="Prudhvi"
+              onerror="this.style.display='none';this.parentElement.style.background='#111';this.parentElement.innerHTML='<div style=&quot;color:#fff;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-weight:900;&quot;>P</div>'">
+          </div>
+          <div>
+            <div class="name">PRUDHVI</div>
+            <div class="muted">Trip CEO</div>
+            <div class="row"><strong>Phone:</strong> <a href="tel:9135489441">9135489441</a></div>
+            <div class="row"><strong>Email:</strong> <a href="mailto:TRIPCEO@GMAIL.COM">TRIPCEO@GMAIL.COM</a></div>
+          </div>
+        </div>
+      </div>
+      <p><strong>If you have any changes, please contact him.</strong></p>
+      <div class="bar">
+        <span></span>
+        <button class="btn primary" data-nav="logic">Continue</button>
+      </div>
+    </section>
+
+    <!-- ========== LOGIC GATE ========== -->
+    <section class="screen" id="logic">
+      <h2>Ready to Reveal the Roadmap?</h2>
+      <p class="muted">All 17 participants must be marked <strong>Interested</strong> to proceed.</p>
+      <div class="cta">
+        <button class="btn secondary" id="checkLogic">Check Now</button>
+        <button class="btn ghost" data-nav="participants">Edit Responses</button>
+      </div>
+    </section>
+
+    <!-- ========== DAY PAGES ========== -->
+    <section class="screen" id="day1">
+      <h2>🏞️ LAKE TAHOE – DAY 1</h2>
+      <div class="card">
+        <h3>🏡 Airbnb</h3>
+        <p>Sept 15 (Monday check-in) → Sept 16 (Tuesday checkout)</p>
+        <p><strong>Address:</strong> 1 Lake Parkway, South Lake Tahoe, CA 96150, USA</p>
+        <p><strong>Cost:</strong> $656</p>
+        <p><strong>Distance:</strong> ~8 hrs from airport • ~35 min to Inspiration Point</p>
+        <h3>⏰ Itinerary</h3>
+        <ul>
+          <li>08:00 – Inspiration Point (~30 min)</li>
+          <li>08:30 – Vista Point (~20–30 min)</li>
+          <li>09:00 – Scenic drive CA-89 → CA-28 to Incline Village (~55–60 min)</li>
+          <li>10:00 – Monkey Rock Trail (~2.5 mi, 1–1.5 hrs)</li>
+          <li>12:00 – Lunch in Incline Village (or picnic)</li>
+          <li>13:15 – Sand Harbor Beach (2–3 hrs)</li>
+          <li>16:00–17:00 – Return / relax</li>
+        </ul>
+      </div>
+      <div class="bar">
+        <button class="btn primary" data-nav="day2">Next Day</button>
+      </div>
+    </section>
+
+    <section class="screen" id="day2">
+      <h2>🌉 SAN FRANCISCO – DAY 2</h2>
+      <div class="card">
+        <h3>🏡 Airbnb</h3>
+        <p>Sept 16 (Tuesday night check-in) → Sept 18 (Thursday checkout)</p>
+        <p><strong>Location:</strong> South San Francisco • <strong>Cost:</strong> $1360 (2 nights)</p>
+        <h3>⏰ Itinerary</h3>
+        <h3>⏰ AS TIME ALLOWS </h3>
+
+        <ul>
+          <li>08:00–09:00 – Drive SF → Half Moon Bay</li>
+          <li>09:00–11:00 – Golden Gate Bridge (walk, photos)</li>
+          <li>11:30–12:30 – Sister Cities Plaza & Civic Center stroll</li>
+          <li>13:00–17:00 – Fisherman’s Wharf & Pier 39 (sea lions)</li>
+          <li>18:00–18:00 – Big Sur: Bixby Bridge, Pfeiffer Beach, McWay Falls </li>
+        </ul>
+      </div>
+      <div class="bar">
+        <button class="btn ghost" data-nav="day1">Previous Day</button>
+        <button class="btn primary" data-nav="day3">Next Day</button>
+      </div>
+    </section>
+
+    <section class="screen" id="day3">
+      <h2>🌴 LOS ANGELES – DAY 3</h2>
+      <div class="card">
+        <h3>🏡 Airbnb</h3>
+        <p>Sept 18 (Thursday check-in) → Sept 19 (Friday checkout)</p>
+        <p><strong>Location:</strong> Culver City • <strong>Cost:</strong> $768 (1 night)</p>
+        <h3>⏰ Itinerary</h3>
+        <ul>
+          <li>Morning – Santa Monica Pier</li>
+          <li>Afternoon – Manhattan Beach</li>
+          <li>Evening – Long Beach (dinner & waterfront stroll)</li>
+        </ul>
+      </div>
+      <div class="bar">
+        <button class="btn ghost" data-nav="day3">Previous Day</button>
+        <button class="btn primary" data-nav="day4">Next Day</button>
+      </div>
+    </section>
+
+    <section class="screen" id="day4">
+      <h2>🎰 LAS VEGAS – DAY 4</h2>
+      <div class="card">
+        <h3>⏰ Itinerary</h3>
+        <ul>
+          <li>🌃 Vegas Strip Walk (night lights & landmarks)</li>
+          <li>🌊 Bellagio Fountain Show</li>
+          <li>🌺 Bellagio Conservatory & Botanical Garden</li>
+          <li>🎶 Fremont Street Experience</li>
+          <li>🍽️ Eiffel Tower Restaurant (option)</li>
+          <li>🎨 Seven Magic Mountains (best at sunset or day)</li>
+        </ul>
+      </div>
+      <div class="bar">
+        <button class="btn ghost" data-nav="day4">Previous Day</button>
+        <button class="btn primary" data-nav="carRental">View Car Rental Plan</button>
+      </div>
+    </section>
+
+    <!-- ========== FINAL: CAR RENTAL PLAN ========== -->
+    <section class="screen" id="carRental">
+      <h2>🚗 CAR RENTAL PLAN</h2>
+      <div class="card">
+        <p><strong>📍 Pickup & Drop-off:</strong> LAX (Los Angeles International Airport)</p>
+        <p><strong>📅 Dates:</strong> Sept 15 → Sept 20</p>
+        <h3>🔹 Vehicle Options</h3>
+        <ul class="car-list">
+          <li>
+            <strong>RAV4 or Similar (5-Seater)</strong><br>
+            Car: $312 • Insurance: $201 • <strong>Total: $513</strong>
+          </li>
+          <li>
+            <strong>RAV4 or Similar (5-Seater)</strong><br>
+            Car: $312 • Insurance: $201 • <strong>Total: $513</strong>
+          </li>
+          <li>
+            <strong>Jeep Grand Cherokee L or Similar (7-Seater)</strong><br>
+            Car: $432 • Insurance: $236 • <strong>Total: $668</strong>
+          </li>
+        </ul>
+        <p class="grand"><strong>Grand Total:</strong> $1694 – $1770 <span class="muted">(final amount may vary slightly depending on insurance pricing)</span></p>
+      </div>
+      <div class="bar">
+        <button class="btn ghost" data-nav="day5">Back</button>
+        <button class="btn primary" data-nav="landing">Back to Start</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
