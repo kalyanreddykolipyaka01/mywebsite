@@ -11,6 +11,7 @@ body{
   display:flex;align-items:center;justify-content:center;min-height:100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 .app{
@@ -21,6 +22,7 @@ body{
   box-shadow:var(--shadow);
   overflow:hidden;
   margin: 10px;
+  position: relative;
 }
 
 /* Mobile-first responsive design */
@@ -28,13 +30,21 @@ body{
   .app {
     width: 100vw;
     min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
     border-radius: 0;
     margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   
   body {
     align-items: stretch;
     justify-content: stretch;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    overflow-x: hidden;
   }
 }
 
@@ -76,7 +86,9 @@ header{
 @media (max-width: 768px) {
   .screen {
     padding: 20px 16px 30px;
-    min-height: calc(100vh - 40px);
+    min-height: auto;
+    height: auto;
+    overflow-y: visible;
   }
 }
 
@@ -584,6 +596,20 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Fix for mobile viewport height issues */
+@media (max-width: 768px) {
+  html, body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Use dynamic viewport height for mobile */
+  .app {
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
+  }
+}
+
 /* Better focus states for accessibility */
 .btn:focus,
 input:focus {
@@ -606,10 +632,16 @@ input:focus {
 @media (max-width: 768px) {
   .screen {
     display: none;
+    padding-bottom: 40px; /* Extra padding at bottom for mobile */
   }
   
   .screen.active {
     display: block;
+  }
+  
+  /* Ensure the last section has enough bottom padding */
+  .screen:last-child {
+    padding-bottom: 60px;
   }
 }
 
